@@ -1,0 +1,211 @@
+@font-face {
+  font-family:'Ubuntu', sans-serif;
+}
+
+*{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family:'Ubuntu', sans-serif;
+  text-decoration: none;
+  list-style: none;
+}
+
+header{
+  background-color: rgb(191, 181, 90);
+  position: relative;
+}
+
+h1{
+  position:fixed;
+  left: -10000px;
+}
+
+div#MenuHamburguesa{
+  display: grid;
+  grid-template-areas:
+        "header header header socialLink"
+        "topmenu topmenu topmenu socialLink"
+        "agenda agenda ultimas socialLink"
+        "actividades actividades actividades socialLink"
+        "footer footer footer socialLink";
+  grid-template-columns: 1fr 2fr 1fr 4vw;
+}
+
+#menuON span{
+  position: absolute;
+  width: 30px;
+  height: 4px;
+  border-radius: 4px;
+  display: block;
+  background: #76253A;
+  top:10px;
+  left: calc(50% - 15px);
+}
+
+#menuON span:nth-child(2){
+	top: calc(50% - 2px);
+}
+
+#menuON span:nth-child(3){
+  bottom: 1vw;
+  top: auto;
+}
+
+#MenuHamburguesa input{
+  display: none;
+}
+
+#MenuHamburguesa label{
+  cursor: pointer;
+  width: 45px;
+  height: 40px;
+  display: inline-block;
+  z-index: 7;
+  position: fixed;
+  background-color: rgba(214, 244, 239, 0.2);
+  margin: 2vw 2vh;
+  border-radius: 10px;
+}
+
+#MenuHamburguesa #menuON:hover{
+  border: 1px solid #76253A;
+  border-radius: 10px;
+}
+
+input[type="checkbox"]:checked ~ nav.MenuDesplegable {
+  left: 0;
+}
+
+input[type="checkbox"]:checked ~ #LogoApu,
+input[type="checkbox"]:checked ~ #botonLogo {
+  opacity: 0.5;
+  transform: translateX(20vw);
+}
+
+#LogoApu{
+  grid-area: header;
+  justify-self: center;
+  width: 30vw;
+  margin: 4em 0 2em;
+  position: relative;
+  z-index: 5;
+  transition: all 0.50s ease;
+}
+
+#MenuHamburguesa label#botonLogo{
+  display: block;
+  width: 28vw;
+  height: 40vh;
+  grid-area: header;
+  justify-self: center;
+  position: relative;
+  z-index: 8;
+  transition: all 0.50s ease;
+  align-self: center;
+  background-color: inherit;
+}
+
+nav.MenuDesplegable{
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left:-400px; /* Escondemos nuestro menú con un valor negativo */
+	width: 400px;
+	z-index: 5;
+	padding: 90px 30px 30px;
+	background: rgba(104, 197, 219, 0.3);
+	transition: all 0.50s ease;
+	font-size: 1em;
+	overflow-y: auto;
+}
+
+nav.MenuDesplegable a{
+	display:block;
+	text-decoration: none;
+	padding: 30px 10px 10px 10px;
+	color: rgba(255,255,255,1);
+	transition: all ease 0.25s;
+  font-weight: bold;
+  font-size: larger;
+  width: max-content;
+}
+
+nav.MenuDesplegable li{
+	position: relative;
+}
+
+nav.MenuDesplegable a:hover{
+	color: rgb(238, 214, 135);
+}
+
+ul.submenu{
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 8;
+}
+
+ul.submenu li{
+  justify-content: right;
+  display: grid;
+}
+
+ul.submenu li a{
+  width: 230px;
+  text-align: right;
+}
+
+ul.MenuDesplegable1 li a:hover ~ ul.submenu,
+ul.MenuDesplegable1 li a:target ~ ul.submenu{
+  display: block;
+}
+
+ul.submenu:hover{
+  display: block;
+}
+
+div.SocialLink{
+  background-color: rgb(167, 111, 46);
+  display: grid;
+  justify-content: center;
+  align-content: end;
+  position: fixed;
+  width: 40px;
+  height: 100vh;
+  right: 0px;
+  padding-bottom: 2em;
+  z-index: 8;
+  top: 0;
+}
+
+div.SocialLink a{
+  width: 20px;
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 2em;
+  margin-top: 20px;
+}
+
+a#subscribe-button{
+  text-decoration: none;
+  color: white;
+  font-size: 1em;
+  letter-spacing: 5px;
+  word-wrap: break-word;
+  text-align:center;
+}
+
+div.BackgroundMontañas{
+  width: 100vw;
+  position: fixed;
+  top: 17vw;
+}
+
+div.BackgroundMontañas img{
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
