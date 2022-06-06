@@ -12,7 +12,7 @@
 }
 
 header{
-  background-image: url("../../design/BackgroundMontañas.jpg"), linear-gradient(to bottom, rgba(191, 181, 90, 1) 40%, rgba(191, 181, 90, 1) 10%, rgba(255, 255, 255, 1) 10%, rgba(255, 255, 255, 1) 40%);
+  background-image: url("../../design/BackgroundMontañasTierra.png"), linear-gradient(to bottom, rgba(191, 181, 90, 1) 40%, rgba(191, 181, 90, 1) 10%, rgb(255, 152, 68) 10%, rgb(255, 152, 68) 40%);
   background-repeat: no-repeat, no-repeat;
   background-position-x: 0vw, center;
   background-position-y: 12vw, bottom;
@@ -249,6 +249,10 @@ div #marcoTercero{
   height: auto;
 }
 
+.proyeccionFotos img.opacidad{
+  transition: all 1s ease-out;
+}
+
 @media screen and (orientation: portrait){
 
   header{
@@ -286,8 +290,32 @@ div #marcoTercero{
 
   input[type="checkbox"]:checked ~ #LogoApu,
   input[type="checkbox"]:checked ~ #botonLogo {
-    transform: translateX(7vw);
+    opacity: 0.4;
+    transform: none;
   }
+
+  /* desde aca revisar */
+
+  nav.MenuDesplegable{
+  	left:-85vw; /* Escondemos nuestro menú con un valor negativo */
+  	width: 85vw;
+  	padding: 9vw 4vw 2vw;
+  	background: rgba(104, 197, 219, 0.5);
+  	font-size: 4vw;
+  }
+
+  nav.MenuDesplegable a{
+  	padding: 2vw 1vw 1vw;
+    font-weight: bold;
+    font-size: larger;
+    width: max-content;
+  }
+
+  ul.submenu li a{
+    width: 28vw;
+  }
+
+  /* hasta aca revisar */
 
   ul.MenuDesplegable1 li a:target ~ ul.submenu{
     display: block;
@@ -313,7 +341,7 @@ div #marcoTercero{
 
   .proyeccionFotos{
     grid-template-columns: repeat(18, 1fr);
-    grid-template-rows: repeat(8, 10vw);
+    grid-template-rows: repeat(9, 10.1vw);
   }
 
   div #marcoPrimero{
@@ -333,7 +361,7 @@ div #marcoTercero{
   div #marcoTercero{
     width: auto;
     height: auto;
-    grid-column: 4/16;
+    grid-column: 4/15;
     grid-row: 6/9;
   }
 
